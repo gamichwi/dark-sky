@@ -1,14 +1,13 @@
 import React from 'react';
+import "./Current.css";
 
-const Current = ({apparentTemp, icon, currentSummary, dailySummary}) => {
+const Current = ({feelsLike, weatherIcon, description}) => {
 
-   
     return (
-        <div className="location">
-            <h2>{apparentTemp} degrees celsius</h2>
-            <image>{icon}</image>
-            <h2> {currentSummary}</h2>
-            <h2>{dailySummary}</h2>
+        <div className="current">
+            <h2>Currently feels like {feelsLike}°C</h2>
+            <img src={`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`} alt="weather icon"/>
+            <h2 className="current-description"> {description}</h2>
         </div>
     )
 }   
